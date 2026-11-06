@@ -3367,7 +3367,7 @@ const HOJE = new Date(); HOJE.setHours(0,0,0,0);
 function mkx(id){ var el=document.getElementById(id); if(!el) return null; var c=echarts.init(el); charts[id]=c; return c; }
 function parseISO(s){ if(!s) return null; var p=String(s).split('-'); if(p.length!==3) return null; var d=new Date(+p[0],+p[1]-1,+p[2]); d.setHours(0,0,0,0); return d; }
 function diasEntre(a,b){ return Math.round((b-a)/86400000); }
-function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+/* esc() já definido no script principal (escapa também aspas); reutiliza o global para evitar redeclaração entre scripts */
 function fillSelX(id,vals,all){ var s=document.getElementById(id); if(!s) return; s.innerHTML='<option value="">'+all+'</option>'+vals.map(function(v){return '<option>'+esc(v)+'</option>';}).join(''); }
 function topN(map,n){ return Object.entries(map).sort(function(a,b){return b[1]-a[1];}).slice(0,n); }
 // placas que abasteceram (base abastecimento, sincroniza com a aba Abastecimentos)
@@ -3765,7 +3765,7 @@ function reMult(){ renderMultasTable(mApply()); }
 function reManut(){ renderManutTable(nApply()); }
 window.__reAbast=reAbast; window.__reMult=reMult; window.__reManut=reManut;
 // --- foco em um veículo (clique em gráfico/linha/ranking) ---
-function focusVehicle(tab,placa){ if(!placa) return; var P=String(placa).trim(); var cfg={abast:['ad-veic',reAbast,'tbl'],multas:['md-veic',reMult,'m-tbl'],manut:['nd-veic',reManut,'n-tbl']}[tab]; if(!cfg) return; var sel=document.getElementById(cfg[0]); if(!sel) return; var ok=false; for(var i=0;i<sel.options.length;i++){ if(sel.options[i].value===P){ok=true;break;} } if(!ok){ var o=document.createElement('option'); o.value=P; o.textContent=P; sel.appendChild(o); } sel.value=P; cfg[1](); updateFocus(tab); var a=document.getElementById(cfg[2]); if(a){ var card=a.closest?a.closest('.tablecard'):null; (card||a).scrollIntoView({behavior:'smooth',block:'start'}); } }
+function focusVehicle(tab,placa){ if(!placa) return; var P=String(placa).trim(); var cfg={abast:['ad-veic',reAbast,'tbl'],multas:['md-veic',reMult,'m-tbl'],manut:['nd-veic',reManut,'n-tbl']}[tab]; if(!cfg) return; var sel=document.getElementById(cfg[0]); if(!sel) return; var ok=false; for(var i=0;i<sel.options.length;i++){ if(sel.options[i].value===P){ok=true;break;} } if(!ok){ var o=document.createElement('option'); o.value=P; o.textContent=P; sel.appendChild(o); } sel.value=P; cfg[1](); updateFocus(tab); var a=document.getElementById(cfg[2]); if(a){ var card=a.closest?a.closest('.tablecard'):null; var tgt=card||a; try{ if(tgt&&typeof tgt.scrollIntoView==='function') tgt.scrollIntoView({behavior:'smooth',block:'start'}); }catch(_){ } } }
 window.__focusVehicle=focusVehicle;
 function clearDetail(tab){ var ids={abast:['ad-veic','ad-lot','ad-sub','ad-placa'],multas:['md-veic','md-lot','md-sit','md-placa'],manut:['nd-veic','nd-uni','nd-sit','nd-placa']}[tab]||[]; ids.forEach(function(id){ var e=document.getElementById(id); if(e) e.value=''; }); if(tab==='abast') reAbast(); else if(tab==='multas') reMult(); else reManut(); updateFocus(tab); }
 // --- bind: selects, botões ver todos ---
@@ -3777,8 +3777,10 @@ function delegRows(id,tab,idx){ var el=document.getElementById(id); if(!el) retu
 delegRows('tbody','abast',1); delegRows('m-tbody','multas',0); delegRows('n-tbody','manut',1);
 delegRows('m-full-veic-body','multas',1); delegRows('m-full-reinc-body','multas',1); delegRows('n-full-veic-body','manut',1); delegRows('ct-body','abast',1);
 // --- clique nos gráficos de ranking por veículo ---
-function bindChart(id,tab){ var c=charts[id]; if(c&&c.on){ c.off&&c.off('click'); c.on('click',function(p){ if(p&&p.name) focusVehicle(tab,p.name); }); } }
+function bindChart(id,tab){ var c=charts[id]; if(c&&c.on){ var h=function(p){ if(p&&p.name) focusVehicle(tab,p.name); }; c.off&&c.off('click'); c.off&&c.off('dblclick'); c.on('click',h); c.on('dblclick',h); } }
 function bindCharts(){ bindChart('ch-veic','abast'); bindChart('ch-custos','abast'); bindChart('ch-custos-comp','abast'); bindChart('mch-veic','multas'); bindChart('mch-valveic','multas'); bindChart('mch-reinc','multas'); bindChart('mch-reincmes','multas'); bindChart('nch-veic','manut'); }
+/* liga os cliques nos graficos logo na abertura do painel (antes so ligava ao trocar de aba) */
+try{ setTimeout(bindCharts,150); setTimeout(bindCharts,600); }catch(_){ }
 // --- reset do foco ao trocar de aba (visão geral mostra todos) ---
 if(typeof setTab==='function'){ var __st=setTab; setTab=function(which){ __st(which); try{ var ids={abast:['ad-veic','ad-lot','ad-sub','ad-placa'],multas:['md-veic','md-lot','md-sit','md-placa'],manut:['nd-veic','nd-uni','nd-sit','nd-placa']}[which]; if(ids){ ids.forEach(function(id){var e=document.getElementById(id); if(e) e.value='';}); if(which==='abast') reAbast(); else if(which==='multas') reMult(); else if(which==='manut') reManut(); updateFocus(which); } setTimeout(bindCharts,60); }catch(_){ } }; }
 // ===================== CUSTOS TOTAIS POR VEÍCULO =====================
