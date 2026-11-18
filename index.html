@@ -753,7 +753,7 @@ body.dark-mode.hc-mode{--bg:#eae3d7;--panel:#ffffff;--ink:#000000}
 </div>
 
 <div class="wrap">
-  <div class="topbar"><span class="origin-badge" title="Origem dos dados exibidos neste painel"><i data-lucide="database"></i>Fonte: <b>IMPORTAÇÃO - ABASTECIMENTO GERAL</b> · base CTRANS (geral) · atualizado em 09/11/2026</span><button class="btn-nav" id="btn-filt-toggle" type="button" title="Mostrar/ocultar painel de filtros"><i data-lucide="chevrons-down-up"></i><span id="btn-filt-toggle-txt">Minimizar filtros</span></button><button class="btn-nav" id="btn-nav-home" type="button" title="Voltar ao início do painel principal"><i data-lucide="home"></i>Painel principal</button><button class="btn-nav" id="btn-nav-unitra" type="button" title="Ir para o Acesso UNITRA"><i data-lucide="shield-check"></i>Acesso UNITRA</button><button class="btn logout-btn" id="btn-logout" type="button"><i data-lucide="log-out"></i>Sair</button></div>
+  <div class="topbar"><span class="origin-badge" title="Origem dos dados exibidos neste painel"><i data-lucide="database"></i>Fonte: <b>IMPORTAÇÃO - ABASTECIMENTO GERAL</b> · base CTRANS (geral) · atualizado em <span id="ft-upd">&mdash;</span></span><button class="btn-nav" id="btn-filt-toggle" type="button" title="Mostrar/ocultar painel de filtros"><i data-lucide="chevrons-down-up"></i><span id="btn-filt-toggle-txt">Minimizar filtros</span></button><button class="btn-nav" id="btn-nav-home" type="button" title="Voltar ao início do painel principal"><i data-lucide="home"></i>Painel principal</button><button class="btn-nav" id="btn-nav-unitra" type="button" title="Ir para o Acesso UNITRA"><i data-lucide="shield-check"></i>Acesso UNITRA</button><button class="btn logout-btn" id="btn-logout" type="button"><i data-lucide="log-out"></i>Sair</button></div>
   <div class="hero" id="hero-abast">
     <div class="eyebrow"><span></span> Painel de Controle · Frota PRIME · Pernambuco</div>
     <h1>Para onde estão indo os <em>gastos com combustível</em> da frota?</h1>
@@ -951,7 +951,7 @@ body.dark-mode.hc-mode{--bg:#eae3d7;--panel:#ffffff;--ink:#000000}
   </div>
 
   <div class="sec-h" style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
-    <div><h2>Resumo executivo — saldos por sub-unidade <span style="font-size:12px;font-weight:600;color:var(--accent);background:rgba(0,0,0,.04);padding:2px 8px;border-radius:999px;vertical-align:middle">build 21/10 · v4</span></h2><p>Consolidação dos saldos da aba <b>LIMITE</b> por sub-unidade (valor distribuído no período, consumido e disponível), alerta de veículos com saldo esgotado e comparativo de consumo por tipo de frota. Os saldos refletem a aba LIMITE (registro completo); o consumo por frota usa os abastecimentos <b>ABASTECIDO</b> do recorte atual.</p></div>
+    <div><h2>Resumo executivo — saldos por sub-unidade <span style="font-size:12px;font-weight:600;color:var(--accent);background:rgba(0,0,0,.04);padding:2px 8px;border-radius:999px;vertical-align:middle">base de <span id="ft-b1">&mdash;</span></span></h2><p>Consolidação dos saldos da aba <b>LIMITE</b> por sub-unidade (valor distribuído no período, consumido e disponível), alerta de veículos com saldo esgotado e comparativo de consumo por tipo de frota. Os saldos refletem a aba LIMITE (registro completo); o consumo por frota usa os abastecimentos <b>ABASTECIDO</b> do recorte atual.</p></div>
     <button class="btn" id="se-min" title="Minimizar/expandir"><i data-lucide="chevron-up"></i><span id="se-min-txt">Minimizar</span></button>
   </div>
   <div id="se-body">
@@ -973,7 +973,7 @@ body.dark-mode.hc-mode{--bg:#eae3d7;--panel:#ffffff;--ink:#000000}
   </div>
 
   <div class="sec-h" style="display:flex;justify-content:space-between;align-items:flex-start;gap:12px">
-    <div><h2>Detalhamento por veículo <span style="font-size:12px;font-weight:600;color:var(--accent);background:rgba(0,0,0,.04);padding:2px 8px;border-radius:999px;vertical-align:middle">build 21/10 · v3</span></h2><p>Uma linha por placa (veículo único, sem repetir a placa) — 328 veículos no total. Agrega os abastecimentos <b>ABASTECIDO</b> do recorte atual e cruza, por veículo, com os saldos da aba <b>LIMITE</b> da planilha (distribuído no período, disponível e consumido). Use os filtros (placa, prefixo, sub-unidade, lotação e limite), o seletor de colunas, o botão Minimizar e exporte o resultado em XLSX.</p></div>
+    <div><h2>Detalhamento por veículo <span style="font-size:12px;font-weight:600;color:var(--accent);background:rgba(0,0,0,.04);padding:2px 8px;border-radius:999px;vertical-align:middle">base de <span id="ft-b2">&mdash;</span></span></h2><p>Uma linha por placa (veículo único, sem repetir a placa) — <span id="ft-lim-n">&mdash;</span> veículos no total. Agrega os abastecimentos <b>ABASTECIDO</b> do recorte atual e cruza, por veículo, com os saldos da aba <b>LIMITE</b> da planilha (distribuído no período, disponível e consumido). Use os filtros (placa, prefixo, sub-unidade, lotação e limite), o seletor de colunas, o botão Minimizar e exporte o resultado em XLSX.</p></div>
     <button class="btn" id="dv-min" title="Minimizar/expandir"><i data-lucide="chevron-up"></i><span id="dv-min-txt">Minimizar</span></button>
   </div>
   <div id="dv-body">
@@ -1009,8 +1009,8 @@ body.dark-mode.hc-mode{--bg:#eae3d7;--panel:#ffffff;--ink:#000000}
   </div>
 
   <footer>
-    <b>Fonte:</b> PRIME — Planilha de Importação. 5.521 registros (4.668 abastecidos / 853 bloqueados). &nbsp;|&nbsp;
-    <b>Período:</b> 01/09/2026 a 28/10/2026. &nbsp;|&nbsp;
+    <b>Fonte:</b> PRIME — Planilha de Importação. <span id="ft-ab-n">&mdash;</span> registros (<span id="ft-ab-ab">&mdash;</span> abastecidos / <span id="ft-ab-bl">&mdash;</span> bloqueados). &nbsp;|&nbsp;
+    <b>Período:</b> <span id="ft-ab-per">&mdash;</span>. &nbsp;|&nbsp;
     <b>Métricas:</b> Valor = soma de “VALOR DE ABASTECIMENTO” (R$); Litros = soma de “LITROS”; Preço médio/litro = Valor ÷ Litros. Os KPIs e rankings consideram apenas registros com status <b>ABASTECIDO</b>. &nbsp;|&nbsp;
     <b>Observação:</b> Valores recalculados dinamicamente conforme os filtros ativos.
   </footer>
@@ -1206,7 +1206,7 @@ body.dark-mode.hc-mode{--bg:#eae3d7;--panel:#ffffff;--ink:#000000}
   </div>
 
   <footer>
-    <b>Fonte:</b> PRIME — Planilha de Importação, aba MULTAS (983 registros). &nbsp;|&nbsp;
+    <b>Fonte:</b> PRIME — Planilha de Importação, aba MULTAS (<span id="ft-mu-n">&mdash;</span> registros). &nbsp;|&nbsp;
     <b>Métricas:</b> Valor = soma do campo “Valor” (R$); multas pendentes = status diferente de RESOLVIDO/PAGO. &nbsp;|&nbsp;
     <b>Alertas:</b> prazo de identificação vencido e veículos com multa que também abasteceram (cruzado com a base da aba Abastecimentos; exibido apenas aqui, com botão “Resolvido” para ocultar veículos já tratados). &nbsp;|&nbsp;
     <b>Observação:</b> os campos “Data de vencimento” e “CRLV” não vieram preenchidos na planilha; os alertas correspondentes são exibidos assim que esses dados forem informados.
@@ -1282,8 +1282,8 @@ body.dark-mode.hc-mode{--bg:#eae3d7;--panel:#ffffff;--ink:#000000}
   </div>
 
   <footer>
-    <b>Fonte:</b> PRIME — Planilha de Importação, aba MANUTENÇÃO E AVARIAS (343 registros). &nbsp;|&nbsp;
-    <b>Período:</b> solicitações entre 04/06/2026 e 27/10/2026. &nbsp;|&nbsp;
+    <b>Fonte:</b> PRIME — Planilha de Importação, aba MANUTENÇÃO E AVARIAS (<span id="ft-mn-n">&mdash;</span> registros). &nbsp;|&nbsp;
+    <b>Período:</b> solicitações <span id="ft-mn-per">&mdash;</span>. &nbsp;|&nbsp;
     <b>Métricas:</b> ocorrências = nº de solicitações; “em andamento” = status diferente de RESOLVIDO. &nbsp;|&nbsp;
     <b>Observação:</b> indicadores recalculados conforme os filtros ativos.
   </footer>
@@ -1403,7 +1403,7 @@ let RAW = RAW_ORIGINAL.concat(IMPORTED);
 const LIMITE = (function(){ try{ return JSON.parse(document.getElementById('limitedata').textContent)||{}; }catch(e){ return {}; } })();
 const BRL = n => n.toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 const NUM = (n,d=0) => n.toLocaleString('pt-BR',{minimumFractionDigits:d,maximumFractionDigits:d});
-const fmtDate = s => { if(!s) return ''; const [y,m,d]=s.split('-'); return d+'/'+m+'/'+y; };
+const fmtDate = s => { if(!s) return ''; const t=String(s).trim(); let m=t.match(/^(\d{4})-(\d{2})-(\d{2})/); if(m) return m[3]+'/'+m[2]+'/'+m[1]; m=t.match(/^(\d{1,2})\/{1,2}(\d{1,2})\/{1,2}(\d{4})/); if(m) return ('0'+m[1]).slice(-2)+'/'+('0'+m[2]).slice(-2)+'/'+m[3]; return ''; };
 const esc = s => String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
 const uniq = (arr) => [...new Set(arr)].filter(x=>x!=='' && x!=null);
 
@@ -2039,7 +2039,7 @@ function dvAggregate(){
   rows.forEach(function(r){ var p=String(r.veiculo||'N/D'); if(!m[p]){ m[p]={placa:p,modelo:'',prefixo:'',subunidade:'',lotacao:'',tipoFrota:'',statusVeiculo:'',qtd:0,valor:0,litros:0,dataUlt:'',meses:{}}; } var o=m[p]; o.qtd++; o.valor+=(+r.valor||0); o.litros+=(+r.litros||0); if(r.data){ o.meses[String(r.data).slice(0,7)]=1; } if(!o.modelo&&r.modelo)o.modelo=String(r.modelo).trim(); if(!o.prefixo&&r.prefixo)o.prefixo=String(r.prefixo).trim(); if(!o.subunidade&&r.subunidade)o.subunidade=String(r.subunidade).trim(); if(r.lotacao)o.lotacao=String(r.lotacao).trim(); if(!o.tipoFrota&&r.tipoFrota)o.tipoFrota=String(r.tipoFrota).trim(); if(!o.statusVeiculo&&r.statusVeiculo)o.statusVeiculo=String(r.statusVeiculo).trim(); if((r.data||'')>o.dataUlt)o.dataUlt=r.data||''; });
   return Object.values(m).map(function(o){ var L=LIMITE[o.placa]; o.hasLimite=!!L; o.distribuido=L?(+L.distribuido||0):null; o.disponivel=L?(+L.disponivel||0):null; o.consumido=L?(+L.consumido||0):null; if(!o.prefixo&&L&&L.prefixo)o.prefixo=L.prefixo; if(!o.subunidade&&L&&L.sub)o.subunidade=L.sub; var nm=Object.keys(o.meses).length; o.mesesAtivos=nm; o.mediaMes=nm?(o.valor/nm):0; var delta=(DV_TR[o.placa]!=null)?(+DV_TR[o.placa]||0):0; o.tempoReal=delta; o.dispBase=o.disponivel; if(o.disponivel!=null){ o.disponivel=o.disponivel+delta; o.consumido=(o.distribuido!=null)?(o.distribuido-o.disponivel):o.consumido; } return o; });
 }
-function dvFmt(c,o){ var v=o[c.k]; if(c.type==='tr'){ var raw=(o.tempoReal||0); var disp=raw? BRL(raw):''; return '<input type="text" class="dv-tr-input" data-placa="'+esc(o.placa)+'" value="'+esc(disp)+'" placeholder="R$ 0,00" inputmode="text" title="Inserir saldo (R$) — use valor negativo para reduzir">'; } if(c.type==='money'){ return v==null?'—':BRL(v); } if(c.type==='num'){ return NUM(v||0,0); } if(c.type==='int'){ return NUM(v||0); } if(c.type==='date'){ return v?fmtDate(v):'—'; } return (v==null||v==='')?'—':esc(v); }
+function dvFmt(c,o){ var v=o[c.k]; if(c.type==='tr'){ var raw=(o.tempoReal||0); var disp=raw? BRL(raw):''; return '<input type="text" class="dv-tr-input" data-placa="'+esc(o.placa)+'" value="'+esc(disp)+'" placeholder="R$ 0,00" inputmode="text" title="Inserir saldo (R$) — use valor negativo para reduzir">'; } if(c.type==='money'){ return v==null?'—':BRL(v); } if(c.type==='num'){ return NUM(v||0,0); } if(c.type==='int'){ return NUM(v||0); } if(c.type==='date'){ return (fmtDate(v)||'—'); } return (v==null||v==='')?'—':esc(v); }
 function renderDetVeic(){
   if(!document.getElementById('dv-tbody')) return;
   var arr=dvAggregate();
@@ -3509,7 +3509,7 @@ function renderMultasTable(rows){
   var tb=document.getElementById('m-tbody');
   document.getElementById('m-rowcount').textContent=NUM(sorted.length)+' multa(s)';
   document.getElementById('m-empty').style.display=sorted.length?'none':'';
-  tb.innerHTML=sorted.slice(0,400).map(function(m){ var pend=multaPendente(m); return '<tr><td><b>'+esc(m.placa)+'</b></td><td>'+esc(m.modelo||'—')+'</td><td>'+esc(m.ait||'—')+'</td><td class="num">'+BRL(+m.valor||0)+'</td><td>'+(m.limite?fmtDate(m.limite):'—')+'</td><td>'+esc(m.motorista||'—')+'</td><td>'+(pend?'<b style="color:#B5553F">'+esc(m.status)+'</b>':esc(m.status))+'</td><td>'+esc(m.categoria)+'</td><td>'+esc(m.lotacao)+'</td><td>'+esc(m.locacao)+'</td></tr>'; }).join('')+(sorted.length>400?'<tr><td colspan="10" style="text-align:center;color:#8A8178">Mostrando 400 de '+NUM(sorted.length)+' — refine os filtros para ver as demais.</td></tr>':'');
+  tb.innerHTML=sorted.slice(0,400).map(function(m){ var pend=multaPendente(m); return '<tr><td><b>'+esc(m.placa)+'</b></td><td>'+esc(m.modelo||'—')+'</td><td>'+esc(m.ait||'—')+'</td><td class="num">'+BRL(+m.valor||0)+'</td><td>'+(fmtDate(m.limite)||'—')+'</td><td>'+esc(m.motorista||'—')+'</td><td>'+(pend?'<b style="color:#B5553F">'+esc(m.status)+'</b>':esc(m.status))+'</td><td>'+esc(m.categoria)+'</td><td>'+esc(m.lotacao)+'</td><td>'+esc(m.locacao)+'</td></tr>'; }).join('')+(sorted.length>400?'<tr><td colspan="10" style="text-align:center;color:#8A8178">Mostrando 400 de '+NUM(sorted.length)+' — refine os filtros para ver as demais.</td></tr>':'');
 }
 function renderReinc(rows,byVeic,valVeic){
   var modByVeic={},lotByVeic={},mesByVeic={},datesByVeic={};
@@ -3522,7 +3522,7 @@ function renderReinc(rows,byVeic,valVeic){
   document.getElementById('mins-reinc').innerHTML=arr.length?('<b>'+NUM(arr.length)+'</b> veículo(s) reincidentes (2+ multas). Destaque: <b>'+esc(topR.placa)+'</b> com '+NUM(topR.n)+' multas e '+BRL(topR.valor)+'.'):'Nenhum veículo com 2 ou mais multas no recorte atual.';
   document.getElementById('mins-reincmes').innerHTML=byMeses.length?('Recorrência ao longo do tempo (veículos com datas de prazo informadas). Topo: <b>'+esc(byMeses[0][0])+'</b> em '+NUM(byMeses[0][1])+' mês(es) distintos.'):'Sem datas de prazo suficientes para medir a recorrência temporal no recorte.';
   document.getElementById('m-full-reinc-count').textContent=NUM(arr.length)+' veículo(s) reincidentes';
-  document.getElementById('m-full-reinc-body').innerHTML=arr.map(function(o,i){return '<tr><td>'+(i+1)+'</td><td><b>'+esc(o.placa)+'</b></td><td>'+esc(o.modelo||'—')+'</td><td class="num">'+NUM(o.n)+'</td><td class="num">'+(o.meses||'—')+'</td><td class="num">'+BRL(o.valor)+'</td><td>'+(o.prim?fmtDate(o.prim):'—')+'</td><td>'+(o.ult?fmtDate(o.ult):'—')+'</td><td>'+esc(o.lot)+'</td></tr>';}).join('')||'<tr><td colspan="9" style="text-align:center;color:#8A8178">Nenhum veículo reincidente no recorte atual.</td></tr>';
+  document.getElementById('m-full-reinc-body').innerHTML=arr.map(function(o,i){return '<tr><td>'+(i+1)+'</td><td><b>'+esc(o.placa)+'</b></td><td>'+esc(o.modelo||'—')+'</td><td class="num">'+NUM(o.n)+'</td><td class="num">'+(o.meses||'—')+'</td><td class="num">'+BRL(o.valor)+'</td><td>'+(fmtDate(o.prim)||'—')+'</td><td>'+(fmtDate(o.ult)||'—')+'</td><td>'+esc(o.lot)+'</td></tr>';}).join('')||'<tr><td colspan="9" style="text-align:center;color:#8A8178">Nenhum veículo reincidente no recorte atual.</td></tr>';
 }
 function fillFullVeic(byVeic,valVeic,rows){
   var lotByVeic={}; rows.forEach(function(m){ if(!m.placa)return; if(!lotByVeic[m.placa])lotByVeic[m.placa]={}; lotByVeic[m.placa][m.lotacao]=(lotByVeic[m.placa][m.lotacao]||0)+1; });
@@ -3601,7 +3601,7 @@ function renderManutAlert(rows){
   if(resolv){ footBits.push('<span>'+NUM(resolv)+' manutenção(ões) marcada(s) como resolvida(s) e ocultada(s).</span>'); footBits.push('<button class="pa-restore" data-nr-restore="1"><i data-lucide="rotate-ccw"></i>Reexibir resolvidas</button>'); }
   var foot=footBits.length?'<div class="pa-foot">'+footBits.join('')+'</div>':'';
   if(!ab.length){ el.className='prime-alert ok'; el.innerHTML='<div class="pa-head"><i data-lucide="check-circle"></i><div><b>Alerta de manutenções em aberto</b><span>Nenhuma solicitação em andamento no recorte atual — todas resolvidas.</span></div></div>'+foot; if(window.lucide) lucide.createIcons(); applyAlertMin('n-alert'); return; }
-  var rws=ab.map(function(m,i){ var d=parseISO(m.dataSolic); var dias=d?diasEntre(d,HOJE):'—'; return '<tr class="crit"><td>'+(i+1)+'</td><td><b>'+esc(m.placa)+'</b></td><td>'+esc(m.marca||'—')+'</td><td>'+esc(m.motivo)+'</td><td>'+(m.dataSolic?fmtDate(m.dataSolic):'—')+'</td><td class="num">'+(d?NUM(dias):'—')+'</td><td>'+esc(m.unidade)+'</td><td><button class="pa-resolve" data-nr-resolve="'+esc(manutKeyOf(m))+'"><i data-lucide="check"></i>Resolvido</button></td></tr>'; }).join('');
+  var rws=ab.map(function(m,i){ var d=parseISO(m.dataSolic); var dias=d?diasEntre(d,HOJE):'—'; return '<tr class="crit"><td>'+(i+1)+'</td><td><b>'+esc(m.placa)+'</b></td><td>'+esc(m.marca||'—')+'</td><td>'+esc(m.motivo)+'</td><td>'+(fmtDate(m.dataSolic)||'—')+'</td><td class="num">'+(d?NUM(dias):'—')+'</td><td>'+esc(m.unidade)+'</td><td><button class="pa-resolve" data-nr-resolve="'+esc(manutKeyOf(m))+'"><i data-lucide="check"></i>Resolvido</button></td></tr>'; }).join('');
   el.className='prime-alert warn';
   el.innerHTML='<div class="pa-head"><i data-lucide="alert-triangle"></i><div><b>Manutenções em andamento</b><span>'+NUM(ab.length)+' solicitação(ões) ainda em aberto. Acompanhe o tempo decorrido desde a solicitação.</span></div></div><div class="tscroll"><table class="pa-tbl"><thead><tr><th>#</th><th>Placa</th><th>Marca/Modelo</th><th>Motivo</th><th>Solicitado em</th><th class="num">Dias em aberto</th><th>Unidade</th><th>Ação</th></tr></thead><tbody>'+rws+'</tbody></table></div>'+foot;
   if(window.lucide) lucide.createIcons();
@@ -3611,7 +3611,7 @@ function renderManutTable(rows){
   var sorted=rows.slice().sort(function(a,b){ var k=nSortKey,va=String(a[k]||''),vb=String(b[k]||''); return va.localeCompare(vb,'pt-BR')*nSortDir; });
   document.getElementById('n-rowcount').textContent=NUM(sorted.length)+' solicitação(ões)';
   document.getElementById('n-empty').style.display=sorted.length?'none':'';
-  document.getElementById('n-tbody').innerHTML=sorted.slice(0,400).map(function(m){ var ab=nAberta(m); return '<tr><td>'+(m.dataSolic?fmtDate(m.dataSolic):'—')+'</td><td><b>'+esc(m.placa)+'</b></td><td>'+esc(m.marca||'—')+'</td><td>'+esc(m.motivo)+'</td><td>'+esc(m.unidade)+'</td><td>'+esc(m.locadora)+'</td><td>'+esc(m.solicitante||'—')+'</td><td>'+(m.placaReserva&&m.placaReserva.length>2?esc(m.placaReserva):'—')+'</td><td>'+(ab?'<b style="color:#B5553F">'+esc(m.status)+'</b>':esc(m.status))+'</td></tr>'; }).join('')+(sorted.length>400?'<tr><td colspan="9" style="text-align:center;color:#8A8178">Mostrando 400 de '+NUM(sorted.length)+'.</td></tr>':'');
+  document.getElementById('n-tbody').innerHTML=sorted.slice(0,400).map(function(m){ var ab=nAberta(m); return '<tr><td>'+(fmtDate(m.dataSolic)||'—')+'</td><td><b>'+esc(m.placa)+'</b></td><td>'+esc(m.marca||'—')+'</td><td>'+esc(m.motivo)+'</td><td>'+esc(m.unidade)+'</td><td>'+esc(m.locadora)+'</td><td>'+esc(m.solicitante||'—')+'</td><td>'+(m.placaReserva&&m.placaReserva.length>2?esc(m.placaReserva):'—')+'</td><td>'+(ab?'<b style="color:#B5553F">'+esc(m.status)+'</b>':esc(m.status))+'</td></tr>'; }).join('')+(sorted.length>400?'<tr><td colspan="9" style="text-align:center;color:#8A8178">Mostrando 400 de '+NUM(sorted.length)+'.</td></tr>':'');
 }
 function fillFullManutVeic(byVeic,rows){
   var motByVeic={},uniByVeic={},modByVeic={};
@@ -4381,7 +4381,7 @@ if(window.lucide) lucide.createIcons();
     var body='<tbody>'+rows.map(function(o){ return '<tr>'+
       '<td>'+esc(o.veiculo)+'</td><td>'+esc(o.modelo||'—')+'</td><td>'+esc(o.sub||'—')+'</td>'+
       '<td class="num">'+NUM(o.n)+'</td><td class="num">'+NUM(o.litros)+'</td><td class="num">'+BRL(o.valor)+'</td>'+
-      '<td class="num">'+(o.preco?BRL(o.preco):'—')+'</td><td class="num">'+(o.media?NUM(o.media,2):'—')+'</td><td>'+(o.ult?fmtDate(o.ult):'—')+'</td></tr>'; }).join('')+'</tbody>';
+      '<td class="num">'+(o.preco?BRL(o.preco):'—')+'</td><td class="num">'+(o.media?NUM(o.media,2):'—')+'</td><td>'+(fmtDate(o.ult)||'—')+'</td></tr>'; }).join('')+'</tbody>';
     var el=document.getElementById('u-acomp'); if(el){ el.innerHTML=head+body;
       [].forEach.call(el.querySelectorAll('th'),function(th){ th.addEventListener('click',function(){ var k=th.getAttribute('data-k'); if(acompSort.k===k) acompSort.dir*=-1; else {acompSort.k=k; acompSort.dir=(k==='veiculo'||k==='modelo'||k==='sub'||k==='ult')?1:-1;} renderAcomp(uFilterAbast()); }); });
     }
@@ -4475,7 +4475,7 @@ if(window.lucide) lucide.createIcons();
     var mel=document.getElementById('u-tbl-multas');
     if(mel){ var ms=multas.slice().sort(function(a,b){return (b.valor||0)-(a.valor||0);});
       mel.innerHTML='<thead><tr><th>Placa</th><th>Modelo</th><th>AIT</th><th class="num">Valor</th><th>Status</th><th>Vencimento</th></tr></thead><tbody>'+
-      (ms.length?ms.map(function(m){return '<tr><td>'+esc(m.placa)+'</td><td>'+esc(m.modelo||'—')+'</td><td>'+esc(m.ait||'—')+'</td><td class="num">'+BRL(m.valor||0)+'</td><td>'+esc(m.status||'—')+'</td><td>'+(m.venc?fmtDate(m.venc):'—')+'</td></tr>';}).join(''):'<tr><td colspan="6" style="text-align:center;color:#8A8178">Nenhuma multa vinculada à UNITRA.</td></tr>')+'</tbody>';
+      (ms.length?ms.map(function(m){return '<tr><td>'+esc(m.placa)+'</td><td>'+esc(m.modelo||'—')+'</td><td>'+esc(m.ait||'—')+'</td><td class="num">'+BRL(m.valor||0)+'</td><td>'+esc(m.status||'—')+'</td><td>'+(fmtDate(m.venc)||'—')+'</td></tr>';}).join(''):'<tr><td colspan="6" style="text-align:center;color:#8A8178">Nenhuma multa vinculada à UNITRA.</td></tr>')+'</tbody>';
       var mn=document.getElementById('u-multas-note'); if(mn) mn.textContent=NUM(multas.length)+' auto(s) · total '+BRL(valMultas)+'.';
     }
     // tabela manut (com filtros de data, placa e status)
@@ -4497,7 +4497,7 @@ if(window.lucide) lucide.createIcons();
     });
     var ns=rows.slice().sort(function(a,b){return String(b.carimbo||'').localeCompare(String(a.carimbo||''));});
     el.innerHTML='<thead><tr><th>Placa</th><th>Marca</th><th>Motivo</th><th>Status</th><th>Data</th></tr></thead><tbody>'+
-      (ns.length?ns.map(function(x){return '<tr><td>'+esc(x.placa)+'</td><td>'+esc(x.marca||'—')+'</td><td>'+esc(x.motivo||'—')+'</td><td>'+esc(x.status||'—')+'</td><td>'+(x.carimbo?fmtDate(x.carimbo):'—')+'</td></tr>';}).join(''):'<tr><td colspan="5" style="text-align:center;color:#8A8178">Nenhuma manutenção no recorte atual.</td></tr>')+'</tbody>';
+      (ns.length?ns.map(function(x){return '<tr><td>'+esc(x.placa)+'</td><td>'+esc(x.marca||'—')+'</td><td>'+esc(x.motivo||'—')+'</td><td>'+esc(x.status||'—')+'</td><td>'+(fmtDate(x.carimbo)||'—')+'</td></tr>';}).join(''):'<tr><td colspan="5" style="text-align:center;color:#8A8178">Nenhuma manutenção no recorte atual.</td></tr>')+'</tbody>';
     var pend=rows.filter(function(x){ return String(x.status||'').toUpperCase().indexOf('RESOLV')<0; }).length;
     var nn=document.getElementById('u-manut-note'); if(nn) nn.textContent=NUM(rows.length)+' solicitação(ões) no recorte · '+NUM(pend)+' em aberto.';
   }
@@ -5032,6 +5032,42 @@ if(window.lucide) lucide.createIcons();
     if(theme==='dark') applyDark(true);
   }
   ready(function(){ buildFab(); buildHelp(); });
+})();
+</script>
+
+<script>
+/* Atualiza automaticamente os textos de fonte/periodo/contagem a partir dos dados embutidos */
+(function(){
+  function J(id){ try{ var el=document.getElementById(id); return el?JSON.parse(el.textContent):null; }catch(e){ return null; } }
+  function nBR(n){ try{ return Number(n).toLocaleString('pt-BR'); }catch(e){ return String(n); } }
+  function dBR(s){ if(!s) return ''; var t=String(s).trim();
+    var m=t.match(/^(\d{4})-(\d{2})-(\d{2})/); if(m) return m[3]+'/'+m[2]+'/'+m[1];
+    m=t.match(/^(\d{1,2})\/{1,2}(\d{1,2})\/{1,2}(\d{4})/); if(m) return ('0'+m[1]).slice(-2)+'/'+('0'+m[2]).slice(-2)+'/'+m[3];
+    return ''; }
+  function set(id,v){ var el=document.getElementById(id); if(el && v) el.textContent=v; }
+  function ds(arr,keys){ var out=[]; (arr||[]).forEach(function(r){ keys.forEach(function(k){ var d=r&&r[k]; if(typeof d==='string' && /^\d{4}-\d{2}-\d{2}/.test(d.trim())) out.push(d.trim().slice(0,10)); }); }); out.sort(); return out; }
+  function run(){
+    try{
+      var AB=J('dataset'), MU=J('multasdata'), MN=J('manutdata'), LIM=J('limitedata');
+      if(AB && AB.length){
+        var ab=0, bl=0;
+        AB.forEach(function(r){ var s=String((r&&r.status)||'').toUpperCase(); if(s==='ABASTECIDO') ab++; else if(s==='BLOQUEADO') bl++; });
+        set('ft-ab-n', nBR(AB.length)); set('ft-ab-ab', nBR(ab)); set('ft-ab-bl', nBR(bl));
+        var d1=ds(AB,['data']); if(d1.length) set('ft-ab-per', dBR(d1[0])+' a '+dBR(d1[d1.length-1]));
+      }
+      if(MU) set('ft-mu-n', nBR(MU.length));
+      if(MN && MN.length){
+        set('ft-mn-n', nBR(MN.length));
+        var d2=ds(MN,['dataSolic','carimbo']); if(d2.length) set('ft-mn-per','entre '+dBR(d2[0])+' e '+dBR(d2[d2.length-1]));
+      }
+      if(LIM) set('ft-lim-n', nBR(Object.keys(LIM).length));
+      var all = ds(AB,['data']).concat(MN?ds(MN,['dataSolic','carimbo']):[]);
+      if(all.length){ all.sort(); var u=dBR(all[all.length-1]); set('ft-upd',u); set('ft-b1',u); set('ft-b2',u); }
+    }catch(e){}
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', run); else run();
+  setTimeout(run, 900);
+  document.addEventListener('change', function(e){ var t=e.target; if(t && t.tagName==='INPUT' && t.type==='file'){ setTimeout(run, 2500); } }, true);
 })();
 </script>
 </body>
